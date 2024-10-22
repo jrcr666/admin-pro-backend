@@ -3,6 +3,7 @@ import globals from 'globals';
 export default [
   {
     rules: {
+      'no-unused-vars': 'error',
       'no-undef': 'error',
       eqeqeq: 'error',
       quotes: ['warn', 'single'],
@@ -28,6 +29,17 @@ export default [
       ],
     },
   },
-  { files: ['**/*.js'], languageOptions: { sourceType: 'commonjs' } },
+  { files: ['**/*.js'], languageOptions: { sourceType: 'module' } },
   { languageOptions: { globals: globals.node } },
 ];
+
+// ],
+// },
+// // Aquí se establece el sourceType
+// parserOptions: {
+//   sourceType: 'module',
+// },
+// },
+// { files: ['**/*.js'], languageOptions: { sourceType: 'module' } },
+// { languageOptions: { globals: globals.node } },
+// ];

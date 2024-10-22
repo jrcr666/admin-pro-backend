@@ -4,6 +4,4 @@ const setRoutes = (app) => {
   });
 };
 
-module.exports = {
-  setRoutes,
-};
+export { setRoutes };

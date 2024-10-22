@@ -1,21 +1,19 @@
 // Vendors
-const express = require('express');
+import express from 'express';
+import 'dotenv/config';
 // Init Utils
-const { startServer } = require('./startServer');
+import { startServer } from './startServer.js';
 // Middlewares
-const { setMiddlewares } = require('./middlewares/middlewares');
-// Constants
-const { PORT } = require('./constants/commons');
+import { setMiddlewares } from './middlewares/middlewares.js';
 // Routes
-const { setRoutes } = require('./routes/routes');
-
-require('dotenv').config();
+import { setRoutes } from './routes/routes.js';
 
 const app = express();
+
+console.clear();
 // Middleware
 setMiddlewares(app);
 // Routes
 setRoutes(app);
 // start
-const port = process.env.PORT || PORT;
-startServer(app, port);
+startServer(app);

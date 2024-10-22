@@ -1,16 +1,15 @@
 // Node Core
-const fs = require('fs');
-const path = require('path');
-
+import fs from 'fs';
+import path from 'path';
 // Vendors
-const cors = require('cors');
-const morgan = require('morgan');
+import cors from 'cors';
+import morgan from 'morgan';
+// Utils
+import { getDirname } from '../utils/common.utils.js';
 
 const accessLogStream = fs.createWriteStream(
-  path.join(__dirname, '..', 'app.log'),
-  {
-    flags: 'a',
-  },
+  path.join(getDirname(import.meta.url), '..', 'app.log'),
+  { flags: 'a' },
 );
 
 const setMiddlewares = (app) => {
@@ -23,6 +22,4 @@ const setMiddlewares = (app) => {
   }
 };
 
-module.exports = {
-  setMiddlewares,
-};
+export { setMiddlewares };

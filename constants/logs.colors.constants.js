@@ -7,4 +7,4 @@ const MAGENTA = '\x1b[35m'; // Texto magenta
 const CYAN = '\x1b[36m'; // Texto cian
 const WHITE = '\x1b[37m'; // Texto blanco
 
-module.exports = { RESET, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE };
+export { RESET, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE };

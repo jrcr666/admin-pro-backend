@@ -1,17 +1,18 @@
-const { dbConnection } = require('./database/config');
-const {
+import { dbConnection } from './database/config.js';
+import {
   CYAN,
   RESET,
   YELLOW,
   GREEN,
   RED,
   MAGENTA,
-} = require('./constants/logs.colors.constants');
+} from './constants/logs.colors.constants.js';
+import { PORT } from './constants/commons.js';
 
-const startServer = async (app, port) => {
+const startServer = async (app) => {
+  const port = process.env.PORT || PORT;
+
   try {
-    console.clear();
-
     const [error] = await dbConnection();
 
     if (error) {
@@ -30,4 +31,4 @@ const startServer = async (app, port) => {
   }
 };
 
-module.exports = { startServer };
+export { startServer };
